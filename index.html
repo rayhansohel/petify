@@ -13,16 +13,37 @@
     <!-- daisyUI CSS file + Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/7554a6c3c1.js" crossorigin="anonymous"></script>
 </head>
 
 <!--Website Body start -->
-<body>
+<body class=" font-lato">
 
     <!-- Header section start -->
-    <header>
-        <div class="flex justify-center items-center h-screen flex-col">
-            <img class="w-28" src="assets/Petify-logo.png" alt="">
-        </div>
+    <header class="container m-auto">
+
+        <!-- Navbar start -->
+        <nav class="w-11/12 mx-auto flex justify-between items-center py-8">
+            <!-- Brand Name-->
+            <div class="flex items-center gap-2">
+                <img class="w-6" src="assets/Petify-logo.png" alt="">
+                <h2 class="text-2xl font-extrabold">Petify</h2>
+            </div>
+            <!-- Menu items -->
+            <div>
+                <ul class="flex gap-4 md:gap-10">
+                    <li class="text-sm font-bold opacity-70 hover:text-brandColor transition-colors duration-300"> <a href="">Home</a></li>
+                    <li class="text-sm font-bold opacity-70 hover:text-brandColor transition-colors duration-300"> <a href="">Shop</a></li>
+                    <li class="text-sm font-bold opacity-70 hover:text-brandColor transition-colors duration-300"> <a href="">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Navbar button -->
+            <div class="rounded-full w-10 h-10 border-2 hover:border-brandColor flex justify-center items-center transition-colors duration-300 cursor-pointer">
+                <a href=""><i class="fa-regular fa-user text-brandColor"></i></a>
+            </div>
+        </nav>
+
     </header>
 
     <!-- main sections start -->
