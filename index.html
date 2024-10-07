@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,13 +19,13 @@
 
 
 <!--Website Body start -->
-<body class=" font-lato px-4">
+<body class=" font-lato">
 
     <!-- Header section start -->
-    <header class="container m-auto">
+    <header class="backdrop-blur-lg sticky top-0 z-50">
 
         <!-- Navbar start -->
-        <nav class="w-11/12 mx-auto flex justify-between items-center py-8">
+        <nav class="container m-auto w-11/12 mx-auto flex justify-between items-center py-6 ">
             <!-- Brand Name-->
             <div class="flex items-center gap-2 md:w-10">
                 <img class="w-6" src="assets/Petify-logo.png" alt="">
@@ -40,74 +40,118 @@
                 </ul>
             </div>
             <!-- Navbar button -->
-            <div class="rounded-full w-10 h-10 border-2 hover:border-brandColor flex justify-center items-center transition-colors duration-300 cursor-pointer ">
-                <a href="#"><i class="fa-regular fa-user text-brandColor"></i></a>
+            <div class=" w-10 h-10 border-2 rounded-full opacity-80 hover:opacity-100 flex justify-center items-center transition-opacity duration-300 cursor-pointer ">
+                <i class="fa-regular fa-user text-brandColor"></i>
             </div>
         </nav>
 
-        <!-- Hero section start -->
-        <div class="flex flex-col justify-center items-center max-w-[600px] m-auto text-center">
-            <h3 class="font-bold opacity-70 mb-4 mt-8 md:mt-16">Bringing Families Together <i class="fa-solid fa-fire text-brandColor"></i></h3>
-            <h1 class="text-5xl font-extrabold leading-tight">Your Path to Adoption Starts Here</h1>
-            <p class="my-4">Begin your adoption journey today. Find your perfect companion, give a pet a loving home, and create lifelong memories together.</p>
-            <button class="py-2 px-6 bg-brandColor text-white rounded-full opacity-80 hover:opacity-100 transition-opacity duration-500">View More</button>
-            <div>
-                <img src="assets/pet.webp" alt="">
-            </div>
-        </div>
+
 
     </header>
 
-    <!-- main sections start -->
-    <main class="container m-auto px-8">
+    <!-- main content start -->
+    <main>
 
-        <!-- Adopttion section strat -->
-        <section class="container m-auto my-24 w-11/12">
-        <!-- Top title container -->
-        <div class="flex flex-col justify-center items-center max-w-[600px] m-auto text-center my-8">
-            <h1 class="text-3xl font-extrabold leading-tight">Adopt  Your  Best Friend</h1>
-            <p class="my-4">Adopt your best friend today! Give a pet a forever home, and experience unconditional love, loyalty, and companionship for life.</p>
-        </div>
+        <!-- Hero section start -->
+        <section class="container m-auto flex flex-col justify-center items-center max-w-[600px] text-center">
+            <h3 class="font-bold opacity-70 mb-4 mt-8 md:mt-16">Bringing Families Together <i class="fa-solid fa-fire text-brandColor"></i></h3>
+            <h1 class="text-5xl font-extrabold leading-tight">Your Path to Adoption Starts Here</h1>
+            <p class="my-4">Begin your adoption journey today. Find your perfect companion, give a pet a loving home, and create lifelong memories together.</p>
+            <a href="#mainSection"><button class="py-2 px-6 bg-brandColor text-white rounded-full opacity-80 hover:opacity-100 transition-opacity duration-500">View More</button></a>
+            <div>
+                <img src="assets/pet.webp" alt="">
+            </div>
+        </section>
 
-        <!-- category tab start  -->
-         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 justify-between items-center">
-            <div class="flex justify-center items-center gap-2 py-4 px-10 border-2 rounded-2xl ">
-                <img class="h-12" src="assets/Petify-logo.png" alt="">
-                <h2 class="text-2xl font-bold">Dog</h2>
-            </div>
-            <div class="flex items-center justify-center gap-2 py-4 px-10 border-2 rounded-2xl ">
-                <img class="h-12" src="assets/Petify-logo.png" alt="">
-                <h2 class="text-2xl font-bold">Dog</h2>
-            </div>
-            <div class="flex items-center justify-center gap-2 py-4 px-10 border-2 rounded-2xl ">
-                <img class="h-12" src="assets/Petify-logo.png" alt="">
-                <h2 class="text-2xl font-bold">Dog</h2>
-            </div>
-            <div class="flex items-center justify-center gap-2 py-4 px-10 border-2 rounded-2xl ">
-                <img class="h-12" src="assets/Petify-logo.png" alt="">
-                <h2 class="text-2xl font-bold">Dog</h2>
-            </div>
-         </div>
+        <!-- Adoption section start -->
+        <section id="mainSection" class="container m-auto py-24 w-11/12">
 
-         <!-- filter container start -->
-         <div class="flex justify-between py-10">
-            <h2 class="text-xl font-bold">Best Deal For you</h2>
-            <button class="py-2 px-6 bg-brandColor text-white rounded-full opacity-80 hover:opacity-100 transition-opacity duration-500">Sort By Price</button>
-         </div>
-         
-         <!-- Cart container start -->
-         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 justify-between items-center h-96">
-            <div class="grid col-span-3 h-full border-2 rounded-2xl"></div>
-            <div class="grid col-span-1 h-full border-2 rounded-2xl"></div>
-         </div>
+            <!-- Top title container -->
+            <div class="flex flex-col justify-center items-center max-w-[600px] m-auto text-center mb-8">
+                <h1 class="text-3xl font-extrabold leading-tight">Adopt  Your  Best Friend</h1>
+                <p class="my-4">Adopt your best friend today! Give a pet a forever home, and experience unconditional love, loyalty, and companionship for life.</p>
+            </div>
+
+            <!-- category tab start  -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-between items-center">
+                <div class="flex justify-center items-center gap-2 py-4 px-10 border rounded-2xl ">
+                    <img class="h-12" src="assets/Petify-logo.png" alt="">
+                    <h2 class="text-2xl font-bold">Dog</h2>
+                </div>
+                <div class="flex items-center justify-center gap-2 py-4 px-10 border rounded-2xl ">
+                    <img class="h-12" src="assets/Petify-logo.png" alt="">
+                    <h2 class="text-2xl font-bold">Dog</h2>
+                </div>
+                <div class="flex items-center justify-center gap-2 py-4 px-10 border rounded-2xl ">
+                    <img class="h-12" src="assets/Petify-logo.png" alt="">
+                    <h2 class="text-2xl font-bold">Dog</h2>
+                </div>
+                <div class="flex items-center justify-center gap-2 py-4 px-10 border rounded-2xl ">
+                    <img class="h-12" src="assets/Petify-logo.png" alt="">
+                    <h2 class="text-2xl font-bold">Dog</h2>
+                </div>
+            </div>
+
+            <!-- filter container start -->
+            <div class="flex justify-between items-center py-8">
+                <h2 class="font-extrabold border rounded-full px-4 py-2">Best Deal For you</h2>
+                <button class="py-2 px-6 bg-brandColor text-white rounded-full opacity-80 hover:opacity-100 transition-opacity duration-500">Sort By Price</button>
+            </div>
+            
+            <!-- Cart container start -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 justify-between items-center h-96">
+                <div class="grid col-span-1 lg:col-span-3 h-full border rounded-2xl"></div>
+                <div class="grid col-span-1 lg:col-span-1 h-full border rounded-2xl"></div>
+            </div>
 
         </section>
 
     </main>
     
     <!-- Footer section start -->
-    <footer>
+    <footer class="bg-gray-900 text-white">
+        <!-- footer container -->
+        <div class="m-auto container w-11/12 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
 
+            <!-- footer left container -->
+            <div class="flex gap-4 flex-col items-center lg:items-start">
+                <div class="flex justify-center lg:justify-start gap-2 md:w-10">
+                    <img class="w-6" src="assets/Petify-logo.png" alt="">
+                    <h2 class="text-2xl font-extrabold cursor-pointer">Petify</h2>
+                </div>
+                <p class="opacity-70 text-center lg:text-start">
+                    <span class="font-bold">Location: </span> Washington 165, NY CA 54003 <br>
+                    <span class="font-bold">Phone: </span> +31 85 964 47 25 <br>
+                    <span class="font-bold">Email: </span> info@yourdomain.com <br>
+                    <span class="font-bold">Openings hours: </span> 9.00 AM - 5.00 PM
+                </p>
+                <div class="flex gap-6">
+                    <i class="text-xl hover:text-brandColor cursor-pointer transition-colors duration-300 fa-brands fa-facebook"></i>
+                    <i class="text-xl hover:text-brandColor cursor-pointer transition-colors duration-300 fa-brands fa-x-twitter"></i>
+                    <i class="text-xl hover:text-brandColor cursor-pointer transition-colors duration-300 fa-brands fa-youtube"></i>
+                    <i class="text-xl hover:text-brandColor cursor-pointer transition-colors duration-300 fa-brands fa-instagram"></i>
+                </div>
+            </div>
+
+            <!-- footer center container -->
+            <div class="flex gap-4 flex-col items-center lg:items-center">
+                <h2 class="text-xl font-bold">Useful Links</h2>
+                <ul class="opacity-70 flex flex-col gap-1 text-center lg:text-start">
+                    <li class="hover:text-brandColor transition-colors duration-300 cursor-pointer">Home</li>
+                    <li class="hover:text-brandColor transition-colors duration-300 cursor-pointer">About</li>
+                    <li class="hover:text-brandColor transition-colors duration-300 cursor-pointer">Animals</li>
+                    <li class="hover:text-brandColor transition-colors duration-300 cursor-pointer">Foundation</li>
+                    <li class="hover:text-brandColor transition-colors duration-300 cursor-pointer">Contact</li>
+                </ul>
+            </div>
+
+            <!-- footer right container -->
+            <div class="flex gap-4 flex-col items-center lg:items-end">
+                <h2 class="text-xl font-bold">Drop a Message</h2>
+                <input type="text" placeholder="Enter your email" class="w-2/3 mt-2 py-2 px-6 rounded-full text-black">
+                <button class="w-2/3 py-2 px-6 bg-brandColor text-white rounded-full opacity-80 hover:opacity-100 transition-opacity duration-500">Subscribe</button>
+            </div>
+        </div>
     </footer>
 
     <!-- External JS file link -->

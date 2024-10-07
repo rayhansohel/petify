@@ -7,6 +7,9 @@ tailwind.config = {
         },
         fontFamily: {
           lato: ['Lato', 'sans-serif'],
+        },
+        scrollBehavior: {
+          'smooth': 'smooth',
         }
       }
     }
