@@ -18,7 +18,6 @@ tailwind.config = {
 
 // ------ fetch all post ------//
 const fetchAllPets = async (category) => {
-  console.log(category);
   if(category){
     const fetchPets = fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`);
     try {
@@ -43,11 +42,11 @@ const fetchAllPets = async (category) => {
 
 // ------ Display Post ------//
 const displayAllPets = (data) => {
-  const petContainer = document.getElementById("pet-container");
+    const petContainer = document.getElementById("pet-container");
     petContainer.innerHTML = "";
     if(data.length === 0){
       petContainer.innerHTML = `
-        <div class="grid col-span-1 lg:col-span-3 h-full border rounded-2xl min-h-96 justify-center items-center text-center py-20">
+        <div class="grid col-span-1 md:col-span-3 h-full border rounded-2xl min-h-96 justify-center items-center text-center py-20 px-4">
             <div class="container m-auto flex flex-col justify-center items-center max-w-[400px] md:max-w-[600px] text-center">
                 <div>
                     <img src="assets/error.webp" alt="">
@@ -96,14 +95,17 @@ const displayAllPets = (data) => {
                 </li>
             </ul>
         </div>
-        <!-- card buttons -->
+
         <div class="flex justify-between pt-4 border-t">
-            <button class="py-2 px-4 border-2 hover:border-brandColor text-brandColor hover:bg-brandColor hover:text-white rounded-xl transition-colors duration-500"><i class="fa-regular fa-thumbs-up"></i></button>
+            <button onclick=fetchImage('${pet.image}') class="py-2 px-4 border-2 hover:border-brandColor text-brandColor hover:bg-brandColor hover:text-white rounded-xl transition-colors duration-500"><i class="fa-regular fa-thumbs-up"></i></button>
+
             <button class="py-2 px-6 border-2 hover:border-brandColor text-brandColor hover:bg-brandColor hover:text-white rounded-xl transition-colors duration-500">Adopt</button>
-            <button class="py-2 px-6 border-2 hover:border-brandColor text-brandColor hover:bg-brandColor hover:text-white rounded-xl transition-colors duration-500">Detail</button>
+
+            <button onclick=showModal() class="py-2 px-6 border-2 hover:border-brandColor text-brandColor hover:bg-brandColor hover:text-white rounded-xl transition-colors duration-500">Detail</button>
         </div>
       </div>
      `
+    
     petContainer.appendChild(div);
   })
 }
@@ -122,9 +124,9 @@ const displayAllCategories = (categories) => {
   categories.forEach(item => {
     const div = document.createElement("div");
     div.innerHTML =` 
-    <div class="flex justify-center items-center gap-4 rounded-2xl ">
-    <button onclick="fetchAllPets('${item.category}')" class="btn font-bold w-full h-full">
-      <div class="flex justify-center items-center gap-4 py-6 px-10 ">
+    <div class="flex justify-center items-center">
+    <button id="${item.category}" onclick="fetchAllPets('${item.category}'); setActive('${item.category}')" class="category-btn btn font-bold w-full h-full rounded-2xl hover:bg-[#9002f177]">
+      <div class="flex justify-center items-center gap-4 p-4 ">
         <img class="h-10" src="${item.category_icon}" alt="">
         <h2 class="text-2xl font-bold">${item.category}</h2>
       </div> 
@@ -135,6 +137,45 @@ const displayAllCategories = (categories) => {
   })
 }
 fetchAllCategories();
+
+
+// ------Switching Categories Menu with active status-----//
+const setActive = (id) => {
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.classList.remove('bg-brandColor', 'opacity-80', 'text-white');
+  });
+  document.getElementById(id).classList.add('bg-brandColor', 'opacity-80', 'text-white');
+};
+
+
+// ------thumbnail fetch-----//
+const fetchImage = (image) => {
+  console.log(image);
+  const thumbDiv = document.getElementById('thumb-container'); 
+  const div= document.createElement("div");
+  div.innerHTML = `
+            <div>
+                <img class="sm:max-h-24 md:max-h-48 xl:max-h-24 w-full object-cover rounded-xl" src="${image}" alt="">
+            </div>
+  `
+  thumbDiv.appendChild(div);
+}
+
+
+
+//-------Show the modal with window-------//
+function showModal(message) {
+  console.log(message);
+  const modal = document.getElementById('confirmationModal');
+  const modalMessage = document.getElementById('modalMessage');
+  modalMessage.innerText = message;
+  modal.style.display = 'flex';
+}
+//------Close the modal window-------//
+function closeModal() {
+  const modal = document.getElementById('confirmationModal');
+  modal.style.display = 'none';
+}
 
 
 
