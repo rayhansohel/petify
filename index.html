@@ -6,7 +6,7 @@
     <!--Website Favicon and Title -->
     <link rel="icon" type="image/x-icon" href="assets/Petify-logo.png">
     <title>Petify</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">        
     <!-- Google font "Lato" CDN -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -94,6 +94,10 @@
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 ">
                 <!-- Card container start -->
                 <div id="pet-container" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 content-start gap-4 col-span-1 lg:col-span-3">
+                    <!-- Loading Spinner -->
+                    <div id="loading-spinner" class="hidden">
+                        <img src="assets/loading-spinner.gif" alt="Loading..." />
+                    </div>
                 </div>
 
                 <div id="thumb-container" class="grid grid-cols-2 content-start gap-4 col-span-1 lg:col-span-1 border rounded-2xl p-4 ">
@@ -141,14 +145,14 @@
                                 <span class="font-bold">Price: </span> 800 $
                                 <!-- ${(pet.price === null || pet.price === undefined || pet.price === "") 
                                   ? "Not available" 
-                                  : `${pet.price} $`} -->
+                                  : ${pet.price} $} -->
                               </li>
                               <li>
                                 <i class="text-xl mr-3 text-brandColor fa-solid fa-syringe"></i> 
                                 <span class="font-bold">Vaccinated: </span> Fully
                                 <!-- ${(pet.price === null || pet.price === undefined || pet.price === "") 
                                   ? "Not available" 
-                                  : `${pet.price} $`} -->
+                                  : ${pet.price} $} -->
                               </li>
                           </ul>
                       </div>
@@ -159,6 +163,21 @@
                 <button onclick="closeModal()" class="py-3 px-8 mt-6 w-full bg-brandColor text-white rounded-xl opacity-80 hover:opacity-100 transition-opacity duration-500">Close</button>
             </div>
         </div>
+
+
+            <!-- Modal for Adoption confirmation-->
+            <div id="countdownModal" class="fixed inset-0 flex z-50 bg-gray-900 bg-opacity-50 hidden justify-center items-center">
+                <div class="bg-white p-6 rounded-2xl shadow-lg w-96 text-center flex flex-col justify-center items-center">
+                    <div>
+                        <img class="w-24" src="assets/congrates.gif" alt="Description of GIF" />
+                    </div>
+                    <h2 class="text-4xl font-extrabold my-4">Congratulations</h2>
+                    <p id="modalMessage"></p>
+                    <p>Adoption Process is Starting for your Pet</p>
+                    <p class="text-6xl font-extrabold"><span id="countdown">3</span></p>
+                </div>
+            </div>
+
     </main>
     
     <!-- Footer section start -->

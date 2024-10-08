@@ -99,13 +99,12 @@ const displayAllPets = (data) => {
         <div class="flex justify-between pt-4 border-t">
             <button onclick=fetchImage('${pet.image}') class="py-2 px-4 border-2 hover:border-brandColor text-brandColor hover:bg-brandColor hover:text-white rounded-xl transition-colors duration-500"><i class="fa-regular fa-thumbs-up"></i></button>
 
-            <button class="py-2 px-6 border-2 hover:border-brandColor text-brandColor hover:bg-brandColor hover:text-white rounded-xl transition-colors duration-500">Adopt</button>
+            <button onclick="showAdoptModal()" class="py-2 px-6 border-2 hover:border-brandColor text-brandColor hover:bg-brandColor hover:text-white rounded-xl transition-colors duration-500">Adopt</button>
 
             <button onclick=showModal() class="py-2 px-6 border-2 hover:border-brandColor text-brandColor hover:bg-brandColor hover:text-white rounded-xl transition-colors duration-500">Detail</button>
         </div>
       </div>
      `
-    
     petContainer.appendChild(div);
   })
 }
@@ -165,7 +164,7 @@ const fetchImage = (image) => {
 
 //-------Show the modal with window-------//
 function showModal(message) {
-  console.log(message);
+
   const modal = document.getElementById('confirmationModal');
   const modalMessage = document.getElementById('modalMessage');
   modalMessage.innerText = message;
@@ -178,4 +177,23 @@ function closeModal() {
 }
 
 
+//-------- Modal for Adopt done ----------//
+function showAdoptModal(message) {
+  const modal = document.getElementById('countdownModal');
+  const countdownElement = document.getElementById('countdown');
+  modalMessage.innerText = message;
+  modal.style.display = 'flex';
 
+  let countdown = 3;
+  countdownElement.textContent = countdown;
+  
+  const interval = setInterval(() => {
+      countdown -= 1;
+      countdownElement.textContent = countdown;
+      
+      if (countdown === 0) {
+          clearInterval(interval);
+          modal.style.display = 'none';
+      }
+  }, 1000);
+}
