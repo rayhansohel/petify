@@ -25,7 +25,7 @@
         <nav class="container m-auto w-11/12 mx-auto flex justify-between items-center py-6 ">
             <!-- Brand Name-->
             <div class="flex items-center gap-2 md:w-10">
-                <img class="w-6" src="assets/Petify-logo.png" alt="">
+                <img class="w-6" src="assets/petify-logo.png" alt="">
                 <h2 class="text-2xl font-extrabold cursor-pointer">Petify</h2>
             </div>
             <!-- Menu items -->
@@ -73,7 +73,7 @@
         </section>
 
         <!-- Adoption section start -->
-        <section id="mainSection" class="container m-auto pt-24 lg:mb-24 mb-4 w-11/12">
+        <section id="mainSection" class="container m-auto pt-24 lg:mb-24 mb-10 w-11/12">
             <!-- Top title container -->
             <div class="flex flex-col justify-center items-center max-w-[400px] md:max-w-[600px] m-auto text-center mb-8">
                 <h1 class="text-3xl font-extrabold leading-tight">Adopt  Your  Best Friend</h1>
@@ -92,14 +92,25 @@
             </div>
             
             <!-- Product container start -->
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 ">
-                <!-- Pet Card container start -->
-                <div id="pet-container" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 content-start gap-4 col-span-1 lg:col-span-3">
-                    <!-- Fetched All Pet Card show here -->
+            <div id="pet-main-container" class="relative">
+                <!-- Spinner -->
+                <div id="spinner" class="hidden absolute inset-0 flex justify-center items-center bg-opacity-50 bg-gray-200 z-50">
+                    <img class="w-12 z-[-10]" src="assets/loading-spinner.gif" alt="Loading..." />
                 </div>
-                <!-- Thumbnail Card container -->
-                <div id="thumb-container" class="grid grid-cols-2 content-start gap-4 col-span-1 lg:col-span-1 border rounded-2xl p-4 ">
-                    <!--Fetched Thumbnail show here -->
+            
+                <!-- Pet Content (Will be hidden when spinner is active) -->
+                <div id="pet-content" class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+                    <!-- Pet Card container start -->
+                    <div id="pet-container" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 content-start gap-4 col-span-1 lg:col-span-3">
+                        <!-- Fetched All Pet Card show here -->
+                    </div>
+                    <!-- Thumbnail Card container -->
+                     <div class="col-span-1 border rounded-2xl p-4">
+                        <h2 class="text-xl font-extrabold text-center border-b p-3 mb-4">Like and Store Pets</h2>
+                        <div id="thumb-container" class="grid grid-cols-2 content-start gap-4">
+                            <!-- Fetched Thumbnail show here -->
+                        </div>
+                     </div>
                 </div>
             </div>
         </section>
@@ -117,19 +128,19 @@
     </main>
     
     <!-- Footer section start -->
-    <footer class="bg-gray-900 text-white">
+    <footer class="bg-gray-900 text-white ">
         <!-- footer container -->
         <div class="m-auto container w-11/12 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
 
             <!-- footer left container -->
             <div class="flex gap-4 flex-col items-center lg:items-start">
                 <div class="flex justify-center lg:justify-start items-center gap-2 md:w-10">
-                    <img class="w-10" src="assets/Petify-logo.png" alt="">
+                    <img class="w-10" src="assets/petify-logo.png" alt="">
                     <h2 class="text-2xl font-extrabold cursor-pointer">Petify</h2>
                 </div>
                 <p class="opacity-70 text-center lg:text-start">
                     <span class="font-bold">Location: </span> Washington 165, NY CA 54003 <br>
-                    <span class="font-bold">Phone: </span> +31 85 964 47 25 <br>
+                    <span class="font-bold">Phone: </span> +31 35 353 33 221 <br>
                     <span class="font-bold">Email: </span> info@yourdomain.com <br>
                     <span class="font-bold">Openings hours: </span> 9.00 AM - 5.00 PM
                 </p>
