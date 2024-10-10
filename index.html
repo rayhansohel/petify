@@ -92,91 +92,34 @@
             
             <!-- Product container start -->
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 ">
-                <!-- Card container start -->
+                <!-- Pet Card container start -->
                 <div id="pet-container" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 content-start gap-4 col-span-1 lg:col-span-3">
-                    <!-- Loading Spinner -->
-                    <div id="loading-spinner" class="hidden">
-                        <img src="assets/loading-spinner.gif" alt="Loading..." />
-                    </div>
+                    <!-- Pet Card show here -->
                 </div>
-
+                <!-- Thumbnail Card container -->
                 <div id="thumb-container" class="grid grid-cols-2 content-start gap-4 col-span-1 lg:col-span-1 border rounded-2xl p-4 ">
+                    <!-- Thumbnail show here -->
                 </div>
             </div>
         </section>
 
-        <!-- Modal popup Window-->
+        <!-- Detail Pet Information Modal Container-->
         <div id="confirmationModal" class="p-4 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
-            <div class="bg-white rounded-xl shadow-lg p-6 max-w-lg w-full">
-                <div>
-                    <div class="rounded-xl ">
-                          <img class="md:h-60 w-full object-cover rounded-xl" src="assets/demo-img.png" alt="">
-                      </div>
-                      <div> 
-                          <h2 class="text-2xl font-extrabold my-3">
-                            <!-- ${pet.pet_name} -->Mia
-                        </h2>
-                      </div>
-                      <div class="mb-4">
-                          <ul class="grid grid-cols-2 gap-1">
-                              <li>
-                                <i class="text-xl mr-3 text-brandColor fa-solid fa-sun"></i> 
-                                <span class="font-bold">Breed: </span> Siamese
-                                <!-- ${(pet.breed === null || pet.breed === undefined || pet.breed === "") 
-                                  ? "Not available" 
-                                  : pet.breed} -->
-                              </li>
-                              <li>
-                                <i class="text-xl mr-3 text-brandColor fa-solid fa-calendar-days"></i> 
-                                <span class="font-bold">Birth: </span> 2022-09-05
-                                <!-- ${(pet.date_of_birth === null || pet.date_of_birth === undefined || pet.date_of_birth === "") 
-                                  ? "Not available" 
-                                  : pet.date_of_birth} -->
-                              </li>
-                              <li>
-                                <i class="text-xl mr-3 text-brandColor fa-solid fa-mercury"></i> 
-                                <span class="font-bold">Gender: </span> Female
-                                <!-- ${(pet.gender === null || pet.gender === undefined || pet.gender === "") 
-                                  ? "Not available" 
-                                  : pet.gender} -->
-                              </li>
-                              <li>
-                                <i class="text-xl mr-3 text-brandColor fa-solid fa-solid fa-tags"></i> 
-                                <span class="font-bold">Price: </span> 800 $
-                                <!-- ${(pet.price === null || pet.price === undefined || pet.price === "") 
-                                  ? "Not available" 
-                                  : ${pet.price} $} -->
-                              </li>
-                              <li>
-                                <i class="text-xl mr-3 text-brandColor fa-solid fa-syringe"></i> 
-                                <span class="font-bold">Vaccinated: </span> Fully
-                                <!-- ${(pet.price === null || pet.price === undefined || pet.price === "") 
-                                  ? "Not available" 
-                                  : ${pet.price} $} -->
-                              </li>
-                          </ul>
-                      </div>
-                    </div>
-                <p id="modalMessage" class="mb-4 hidden"></p>
-                <h2 class="text-xl font-bold">Detail Information</h2>
-                <p>This friendly male Golden Retriever is energetic and loyal, making him a perfect companion for families. Born on January 15, 2023, he enjoys playing outdoors and is especially great with children. Fully vaccinated, he's ready to join your family and bring endless joy. Priced at $1200, he offers love, loyalty, and a lively spirit for those seeking a playful yet gentle dog.</p>
-                <button onclick="closeModal()" class="py-3 px-8 mt-6 w-full bg-brandColor text-white rounded-xl opacity-80 hover:opacity-100 transition-opacity duration-500">Close</button>
-            </div>
+            <!-- Detail Pet Information show here -->
         </div>
 
-
-            <!-- Modal for Adoption confirmation-->
-            <div id="countdownModal" class="fixed inset-0 flex z-50 bg-gray-900 bg-opacity-50 hidden justify-center items-center">
-                <div class="bg-white p-6 rounded-2xl shadow-lg w-96 text-center flex flex-col justify-center items-center">
-                    <div>
-                        <img class="w-24" src="assets/congrates.gif" alt="Description of GIF" />
-                    </div>
-                    <h2 class="text-4xl font-extrabold my-4">Congratulations</h2>
-                    <p id="modalMessage"></p>
-                    <p>Adoption Process is Starting for your Pet</p>
-                    <p class="text-6xl font-extrabold"><span id="countdown">3</span></p>
+        <!-- Adoption confirmation Modal Container-->
+        <div id="countdownModal" class="fixed inset-0 flex z-50 bg-gray-900 bg-opacity-50 hidden justify-center items-center">
+            <div class="bg-white p-6 rounded-2xl shadow-lg w-96 text-center flex flex-col justify-center items-center">
+                <div>
+                    <img class="w-24" src="assets/congrates.gif" alt="Description of GIF" />
                 </div>
+                <h2 class="text-4xl font-extrabold my-4">Congratulations</h2>
+                <p id="modalMessage"></p>
+                <p>Adoption Process is Starting for your Pet</p>
+                <p class="text-6xl font-extrabold"><span id="countdown">3</span></p>
             </div>
+        </div>
 
     </main>
     
