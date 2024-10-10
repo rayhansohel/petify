@@ -96,7 +96,7 @@ const displayAllPets = (data) => {
         </div>
         <div class="flex justify-between pt-4 border-t">
             <button onclick=fetchImage('${pet.image}') class="py-2 px-4 border-2 hover:border-brandColor text-brandColor hover:bg-brandColor hover:text-white rounded-xl transition-colors duration-500"><i class="fa-regular fa-thumbs-up"></i></button>
-            <button onclick=showAdoptModal() class="py-2 px-6 border-2 hover:border-brandColor text-brandColor hover:bg-brandColor hover:text-white rounded-xl transition-colors duration-500">Adopt</button>
+            <button onclick="showAdoptModal(this)" class="py-2 px-6 border-2 hover:border-brandColor text-brandColor hover:bg-brandColor hover:text-white rounded-xl transition-colors duration-500">Adopt</button>
             <button onclick="showModal('${pet.image}', '${pet.pet_name.replace(/'/g, "\\'")}', '${pet.breed}', '${pet.date_of_birth}', '${pet.gender}', '${pet.price}', '${pet.vaccinated_status}', '${pet.pet_details.replace(/'/g, "\\'")}')" class="py-2 px-6 border-2 hover:border-brandColor text-brandColor hover:bg-brandColor hover:text-white rounded-xl transition-colors duration-500">Detail</button>
         </div>
       </div>
@@ -134,6 +134,10 @@ const displayAllCategories = (categories) => {
   })
 }
 fetchAllCategories();
+
+
+
+
 // ------Switching Categories Menu with active status-----//
 const setActive = (id) => {
   document.querySelectorAll('.category-btn').forEach(btn => {
@@ -145,7 +149,7 @@ const setActive = (id) => {
 
 
 
-// ------thumbnail fetch-----//
+// ------thumbnail image fetch-----//
 const fetchImage = (image) => {
   const thumbDiv = document.getElementById('thumb-container'); 
   const div= document.createElement("div");
@@ -162,7 +166,6 @@ const fetchImage = (image) => {
 
 //-------Show the modal with window-------//
 const showModal = (image, pet_name, breed, date_of_birth, gender, price, vaccinated_status, pet_details ) => {
-  console.log({ image, pet_name, breed, date_of_birth, gender, price, vaccinated_status, pet_details });
   const modal = document.getElementById('confirmationModal');
   modal.innerHTML = "";
   const div = document.createElement("div");
@@ -234,22 +237,43 @@ function closeModal() {
 
 
 //-------- Modal for Adoption done ----------//
-function showAdoptModal(message) {
+function showAdoptModal(button) {
   const modal = document.getElementById('countdownModal');
-  const countdownElement = document.getElementById('countdown');
-  modalMessage.innerText = message;
+  modal.innerHTML = "";
+  const div = document.createElement("div");
+  div.innerHTML = `
+      <div class="bg-white p-6 rounded-2xl shadow-lg w-96 text-center flex flex-col justify-center items-center">
+          <div>
+              <img class="w-24" src="assets/congrates.gif" alt="Description of GIF" />
+          </div>
+          <h2 class="text-4xl font-extrabold my-4">Congratulations!</h2>
+          <p>Adoption Process is Starting for your Pet</p>
+          <p class="text-6xl font-extrabold"><span id="countdown">3</span></p>
+      </div>
+  `;
+  modal.appendChild(div);
   modal.style.display = 'flex';
 
+  button.disabled = true;
+  button.textContent = "Adopted";
+  button.classList.remove('text-brandColor');
+  button.classList.remove('hover:bg-brandColor');
+  button.classList.remove('hover:border-brandColor');
+  button.classList.remove('hover:text-white');
+  button.classList.add('text-gray-500');
+
   let countdown = 3;
-  countdownElement.textContent = countdown;
-  
+  const countdownElement = document.getElementById('countdown');
   const interval = setInterval(() => {
       countdown -= 1;
       countdownElement.textContent = countdown;
-      
+
       if (countdown === 0) {
           clearInterval(interval);
           modal.style.display = 'none';
       }
   }, 1000);
 }
+
+
+
