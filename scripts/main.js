@@ -159,9 +159,9 @@ const displayAllCategories = (categories) => {
 // ------ Set active category button ------ //
 const setActive = (id) => {
     document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.classList.remove('bg-brandColor', 'opacity-80', 'text-white');
+        btn.classList.remove('bg-brandColor', 'opacity-80', 'text-white', 'rounded-full');
     });
-    document.getElementById(id).classList.add('bg-brandColor', 'opacity-80', 'text-white');
+    document.getElementById(id).classList.add('bg-brandColor', 'opacity-80', 'text-white', 'rounded-full');
 };
 // ------ Fetch and display data ------ //
 fetchAllPets();
