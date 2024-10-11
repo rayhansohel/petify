@@ -16,6 +16,10 @@ tailwind.config = {
 };
 
 
+// ------ Reload page Clicked on Navbar logo ------ //
+function reloadPage() {
+  location.reload();
+}
 
 // ------ Global variable to store all pet data ------ //
 let allPetsData = [];
@@ -76,7 +80,7 @@ const displayAllPets = (data) => {
             <div class="grid col-span-1 md:col-span-3 h-full border rounded-2xl min-h-96 justify-center items-center text-center py-20 px-4">
                 <div class="container m-auto flex flex-col justify-center items-center max-w-[400px] md:max-w-[600px] text-center">
                     <div>
-                        <img src="assets/error.webp" alt="No Information">
+                        <img src="assets/error.webp" alt="No Information Available">
                     </div>
                     <h2 class="text-2xl font-extrabold">No Information Available</h2>
                     <p class="my-4">There is no information available regarding this topic at the moment. Please check back later for updates.</p>
@@ -159,9 +163,6 @@ const setActive = (id) => {
     });
     document.getElementById(id).classList.add('bg-brandColor', 'opacity-80', 'text-white');
 };
-
-
-
 // ------ Fetch and display data ------ //
 fetchAllPets();
 fetchAllCategories();
@@ -182,7 +183,7 @@ const fetchImage = (image) => {
   const div= document.createElement("div");
   div.innerHTML = `
           <div>
-              <img class="sm:max-h-24 md:max-h-48 xl:max-h-24 w-full object-cover rounded-xl" src="${image}" alt="">
+              <img class="sm:max-h-24 md:max-h-48 xl:max-h-24 w-full object-cover rounded-xl" src="${image}" alt="Image Not Found">
           </div>`;
   thumbDiv.appendChild(div);
 };
@@ -197,7 +198,7 @@ const showModal = (image, pet_name, breed, date_of_birth, gender, price, vaccina
   div.innerHTML = `
     <div class="bg-white rounded-2xl shadow-lg p-6 max-w-lg w-full">
       <div>
-          <img class="md:h-72 w-full object-cover rounded-xl" src="${image}" alt="">
+          <img class="md:h-72 w-full object-cover rounded-xl" src="${image}" alt="Image Not Found">
       </div>
 
       <div> 
@@ -274,7 +275,7 @@ function showAdoptModal(button) {
   div.innerHTML = `
       <div class="bg-white p-6 rounded-2xl shadow-lg w-96 text-center flex flex-col justify-center items-center">
           <div>
-              <img class="w-24" src="assets/congrates.gif" alt="Description of GIF" />
+              <img class="w-24" src="assets/congrates.gif" alt="Hi....." />
           </div>
           <h2 class="text-brandColor text-4xl font-extrabold my-4">Congratulations!</h2>
           <p>Adoption process is starting for your Pet</p>
@@ -297,7 +298,6 @@ function showAdoptModal(button) {
   const interval = setInterval(() => {
       countdown -= 1;
       countdownElement.textContent = countdown;
-
       if (countdown === 0) {
           clearInterval(interval);
           modal.style.display = 'none';
